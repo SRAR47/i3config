@@ -1,0 +1,46 @@
+ // Global theme settings for overall dark appearance
+
+* {
+    background-color: #000000;          // Dark background color for all elements
+    color: #ccffff;          // Light text color
+//    border: 1px;                  // Border thickness
+    border-color: #31324400;        // Darker border color
+    border-radius: 25px;           // Rounded corners
+    padding: 2px;                 // Padding around elements
+    spacing: 2px;                 // Spacing between items
+}
+
+// Set dark background specifically for the main Rofi window
+window {
+    background: #1e1e2e;          // Dark background for the window
+    width: 20%;                   // Reduced width
+    anchor: center;               // Center on screen
+    location: center;             // Center vertically as well
+//    border: 1px;                  // Optional border to define the window
+    border-color: #313244;        // Border color matching the theme
+}
+
+// List view settings to control item display and aesthetics
+listview {
+    background: inherit;          // Inherits the global background color
+    lines: 5;                     // Number of items visible (controls height)
+    padding: 2px 5px;             // Inner padding for each item
+    scrollbar: false;             // Disable scrollbar
+}
+
+// Set dark background specifically for the input bar
+inputbar {
+    background: #1e1e2e;          // Dark background for the input bar
+    spacing: 5px;                 // Spacing between input and other elements
+}
+
+// Set dark background specifically for the main box area
+mainbox {
+    background: #1e1e2e;          // Dark background for the main box
+//    border: 2px;                  // Border around the main content
+}
+
+element selected {
+	border: 1px;
+	border-color: #ffffff50;
+}
