@@ -34,7 +34,7 @@ exec --no-startup-id dex --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
+#Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -205,7 +205,7 @@ gaps inner 10
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Evening.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Bridge.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
@@ -264,3 +264,5 @@ exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id xset s off -dpms
 
 bindsym $mod+x exec --no-startup-id brave-browser --app=https://chatgpt.com/g/g-2DQzU5UZl-code-copilot
+
+bindsym $mod+z exec --no-startup-id xdg-open ~/Documents/Ended_Codes/Songs/Songs.html
