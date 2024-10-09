@@ -265,4 +265,4 @@ exec --no-startup-id xset s off -dpms
 
 bindsym $mod+x exec --no-startup-id brave-browser --app=https://chatgpt.com/g/g-2DQzU5UZl-code-copilot
 
-bindsym $mod+m exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Ended_Codes/Songs/Songs.html
+bindsym $mod+m exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/EndedCodes/Songs/Songs.html
