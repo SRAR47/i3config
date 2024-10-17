@@ -147,6 +147,7 @@ bindsym Mod1+y workspace YouTube
 bindsym Mod1+t workspace Typing
 bindsym Mod1+n workspace Files
 bindsym Mod1+o workspace Others
+bindsym Mod1+m workspace Others
 bindsym Mod1+e workspace Empty
 
 # move focused container to workspace
@@ -205,7 +206,7 @@ gaps inner 10
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Bridge.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/AICity5.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
@@ -237,7 +238,7 @@ bindsym $mod+b exec brave-browser
 
 bindsym $mod+n exec nemo
 
-bindsym $mod+z exec blueman-manager
+#bindsym $mod+z exec blueman-manager
 
 # Go to the workspace on the right
 bindsym $mod+f workspace next
@@ -259,10 +260,15 @@ bindsym $mod+c exec --no-startup-id brave-browser --app=https://chat.openai.com
 
 bindsym $mod+t exec --no-startup-id brave-browser --app=https://monkeytype.com
 
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+#exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+exec_always --no-startup-id picom
 
 exec --no-startup-id xset s off -dpms
 
 bindsym $mod+x exec --no-startup-id brave-browser --app=https://chatgpt.com/g/g-2DQzU5UZl-code-copilot
 
-bindsym $mod+m exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/EndedCodes/Songs/Songs.html
+bindsym $mod+z exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Codes/TodoList/TodoList.html
+
+bindsym $mod+p exec scrot
+
+bindsym $mod+m exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Codes/Songs/Songs.html
