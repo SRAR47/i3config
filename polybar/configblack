@@ -70,7 +70,7 @@ adapter = ACAD
 full_text = %percentage%% %remaining%
 format = <label> %percentage%% %remaining%
 format-charging-foreground = ${colors.secondary}
-format-discharging-foreground = ${colors.alert}
+format-discharging-foreground = ${colors.primary}
 
 [module/brightness]
 type = custom/script
