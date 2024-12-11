@@ -98,7 +98,7 @@ bindsym $mod+s fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+q layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -134,7 +134,7 @@ bindsym $mod+4 workspace YouTube
 bindsym $mod+5 workspace Terminal
 bindsym $mod+6 workspace Files
 bindsym $mod+7 workspace Typing
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+8 workspace Whatsapp
 bindsym $mod+9 workspace Others
 bindsym $mod+0 workspace Empty
 
@@ -149,6 +149,7 @@ bindsym Mod1+n workspace Files
 bindsym Mod1+o workspace Others
 bindsym Mod1+m workspace Others
 bindsym Mod1+e workspace Empty
+bindsym Mod1+w workspace WhatsApp
 
 # move focused container to workspace
 bindsym $mod+Shift+v move container to workspace Code
@@ -161,6 +162,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+o move container to workspace Others
 bindsym $mod+Shift+e move container to workspace Empty
+bindsym $mod+Shift+t move container to workspace Typing
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -206,7 +208,7 @@ gaps inner 10
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/AICity5.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/W.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
@@ -265,10 +267,16 @@ exec_always --no-startup-id picom
 
 exec --no-startup-id xset s off -dpms
 
-bindsym $mod+x exec --no-startup-id brave-browser --app=https://chatgpt.com/g/g-2DQzU5UZl-code-copilot
+bindsym $mod+x exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Codes/TodoList/TodoList.html
 
-bindsym $mod+z exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Codes/TodoList/TodoList.html
+bindsym $mod+z exec --no-startup-id brave-browser -app=https://chess.com/play
 
 bindsym $mod+p exec scrot
 
 bindsym $mod+m exec --no-startup-id brave-browser -app=file:///home/shahmeer/Documents/Codes/Songs/Songs.html
+
+bindsym $mod+ctrl+b exec --no-startup-id firefox
+
+exec_always -no-startup-id xrandr --output LVDS-1 --gamma 1.0:0.9:0.8
+
+bindsym $mod+w exec --no-startup-id brave-browser -app=https://web.whatsapp.com
