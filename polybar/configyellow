@@ -1,11 +1,12 @@
 [colors]
-background = #0f0f0f
-background-alt = #1a1a1a
-foreground = #eaeaea
-primary = #4a90e2
-secondary = #56b6c2
-alert = #e06c75
-disabled = #5c6370
+background = #070707
+background-alt = #121212
+foreground = #ffffff
+primary = #ffae16
+secondary = #ffffff
+alert = #be4f4f
+disabled = #3d484d
+
 
 [bar/mybar]
 width = 100%

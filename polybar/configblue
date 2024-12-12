@@ -1,0 +1,85 @@
+[colors]
+background = #070707
+background-alt = #121212
+foreground = #ffffff
+primary = #0d72fc
+secondary = #ffffff
+alert = #be4f4f
+disabled = #3d484d
+
+[bar/mybar]
+width = 100%
+height = 24pt
+radius = 10
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 2pt
+border-size = 2pt
+border-color = #00000000
+padding-left = 0
+padding-right = 1
+module-margin = 1
+separator = |
+separator-foreground = ${colors.secondary}
+font-0 = Ubuntu:Bold:size=12;2
+modules-left = xworkspaces
+modules-center = date
+modules-right = brightness pulseaudio battery
+enable-ipc = true
+
+[module/xworkspaces]
+type = internal/xworkspaces
+label-active = %name%
+label-active-background = ${colors.primary}
+label-active-foreground = ${colors.background}
+label-active-padding = 2
+label-occupied = %name%
+label-occupied-padding = 2
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.background}
+label-urgent-padding = 2
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 2
+tail = true
+enable-click = false
+enable-scroll = false
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume-prefix = "VOL "
+format-volume-prefix-foreground = ${colors.primary}
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-muted = muted
+label-muted-foreground = ${colors.disabled}
+
+[module/date]
+type = internal/date
+interval = 1
+date = %I:%M %p | %d-%h-%Y | %A
+date-alt = %I:%M %p
+label = %date%
+label-foreground = ${colors.primary}
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full_text = %percentage%% %remaining%
+format = <label> %percentage%% %remaining%
+format-charging-foreground = ${colors.secondary}
+format-discharging-foreground = ${colors.primary}
+
+[module/brightness]
+type = custom/script
+exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "Brightness " $2}'  
+interval = 1
+label = %output%
+label-foreground = ${colors.foreground}
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
