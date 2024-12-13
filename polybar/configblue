@@ -67,17 +67,16 @@ label-foreground = ${colors.primary}
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full_text = %percentage%% %remaining%
-format = <label> %percentage%% %remaining%
-format-charging-foreground = ${colors.secondary}
-format-discharging-foreground = ${colors.primary}
+format-charging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
+format-discharging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
+label-charging = %percentage%%
+label-discharging = %percentage%%
 
 [module/brightness]
 type = custom/script
-exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "Brightness " $2}'  
+exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{#0d72fc}Brightness%{F-} " $2}'
 interval = 1
 label = %output%
-label-foreground = ${colors.foreground}
 
 [settings]
 screenchange-reload = true
