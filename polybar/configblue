@@ -16,14 +16,14 @@ foreground = ${colors.foreground}
 line-size = 2pt
 border-size = 2pt
 border-color = #00000000
-padding-left = 0
-padding-right = 1
+padding-left = 3
+padding-right = 3
 module-margin = 1
 separator = |
 separator-foreground = ${colors.secondary}
 font-0 = Ubuntu:Bold:size=12;2
-modules-left = xworkspaces
-modules-center = date
+modules-left = date
+modules-center = xworkspaces
 modules-right = brightness pulseaudio battery
 enable-ipc = true
 
@@ -58,7 +58,7 @@ label-muted-foreground = ${colors.disabled}
 [module/date]
 type = internal/date
 interval = 1
-date = %I:%M %p | %d-%h-%Y | %A
+date = %A, %d-%h-%Y, %I:%M %p
 date-alt = %I:%M %p
 label = %date%
 label-foreground = ${colors.primary}
