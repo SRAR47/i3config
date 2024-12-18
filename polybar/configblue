@@ -75,7 +75,7 @@ label-discharging = %percentage%%
 
 [module/brightness]
 type = custom/script
-exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{#0d72fc}Brightness%{F-} " $2}'
+exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#0d72fc}Brightness%{F-} " $2}'
 interval = 1
 label = %output%
 
