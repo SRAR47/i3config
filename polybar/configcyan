@@ -2,7 +2,7 @@
 background = #070707
 background-alt = #121212
 foreground = #ffffff
-primary = #9900ff
+primary = #00ffff
 secondary = #ffffff
 alert = #be4f4f
 disabled = #3d484d
@@ -84,15 +84,15 @@ label-foreground = ${colors.primary}
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-format-charging = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
-format-discharging = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
-format-full = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}
+format-charging = %{F#00ffff}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
+format-discharging = %{F#00ffff}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
+format-full = %{F#00ffff}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}
 label-charging = %percentage%%
 label-discharging = %percentage%%
 
 [module/brightness]
 type = custom/script
-exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#9900ff}Brightness%{F-} " $2}'  
+exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#00ffff}Brightness%{F-} " $2}'  
 interval = 1
 label = %output%
 
