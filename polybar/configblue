@@ -85,7 +85,7 @@ battery = BAT1
 adapter = ACAD
 format-charging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
 format-discharging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
-format-full = %{F#ffae16}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}
+format-full = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}
 label-charging = %percentage%%
 label-discharging = %percentage%%
 
