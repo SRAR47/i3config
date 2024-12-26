@@ -21,7 +21,7 @@ padding-right = 3
 module-margin = 1
 separator = /
 separator-foreground = ${colors.secondary}
-font-0 = Ubuntu:Bold:size=12;2
+font-0 = Ubuntu:style=Bold:pixelsize=12.5
 modules-left = day date time
 modules-center = xworkspaces
 modules-right = brightness pulseaudio battery
@@ -79,21 +79,28 @@ date-alt = %H:%M
 label = %date%
 label-foreground = ${colors.primary}
 
-[module/battery]
-type = internal/battery
-battery = BAT1
-adapter = ACAD
-format-charging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
-format-discharging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
-format-full = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}
-label-charging = %percentage%%
-label-discharging = %percentage%%
-
 [module/brightness]
 type = custom/script
 exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#0d72fc}Brightness%{F-} " $2}'
 interval = 1
 label = %output%
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+low-at = 5
+full-at = 99
+
+format-charging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
+format-discharging = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
+format-full = %{F#0d72fc}Battery%{F-} %{F#ffffff}<label-full>%{F-}
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+
 
 [settings]
 screenchange-reload = true
