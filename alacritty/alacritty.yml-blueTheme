@@ -26,5 +26,3 @@
     cyan:    '#0d72fc'
     white:   '#ffffff'
 
- window:
-    opacity: 0.8
