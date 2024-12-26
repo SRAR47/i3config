@@ -204,7 +204,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-gaps inner 10
+gaps inner 13
 
 bindsym $mod+space exec rofi -show drun
 
@@ -280,3 +280,7 @@ bindsym $mod+ctrl+b exec --no-startup-id firefox
 exec_always -no-startup-id xrandr --output LVDS-1 --gamma 1.0:0.9:0.8
 
 bindsym $mod+w exec --no-startup-id brave -app=https://web.whatsapp.com
+
+bindsym $mod+End exec "i3-msg exit"
+
+for_window [class=".*"] border pixel 3
