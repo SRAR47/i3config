@@ -90,7 +90,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+g split v
 bindsym $mod+v exec code
 
 # enter fullscreen mode for the focused container
@@ -115,19 +115,19 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "Code"
+set $ws1 "Empty"
 set $ws2 "Browser"
 set $ws3 "ChatGPT"
 set $ws4 "YouTube"
 set $ws5 "Terminal"
 set $ws6 "Files"
 set $ws7 "Typing"
-set $ws8 "8"
+set $ws8 "Code"
 set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace Code
+bindsym $mod+1 workspace Empty
 bindsym $mod+2 workspace Browser
 bindsym $mod+3 workspace ChatGPT
 bindsym $mod+4 workspace YouTube
@@ -136,7 +136,7 @@ bindsym $mod+6 workspace Files
 bindsym $mod+7 workspace Typing
 bindsym $mod+8 workspace Whatsapp
 bindsym $mod+9 workspace Others
-bindsym $mod+0 workspace Empty
+bindsym $mod+0 workspace Code
 
 # alternative for workspace switching
 bindsym Mod1+Return workspace Terminal
@@ -208,7 +208,7 @@ gaps inner 13
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/W.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Sky.png
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
@@ -234,7 +234,7 @@ bindsym F10 exec --no-startup-id brightnessctl set +10%
 bindsym F9 exec --no-startup-id brightnessctl set 10%-
 
 # Lock the screen
-bindsym $mod+l exec i3lock -c 000000
+bindsym $mod+l exec i3lock -i ~/Pictures/Sky_converted.png
 
 bindsym $mod+b exec brave
 
@@ -263,7 +263,7 @@ bindsym $mod+c exec --no-startup-id brave --app=https://chat.openai.com
 bindsym $mod+t exec --no-startup-id brave --app=https://monkeytype.com
 
 #exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf
 
 exec --no-startup-id xset s off -dpms
 
@@ -282,5 +282,7 @@ exec_always -no-startup-id xrandr --output LVDS-1 --gamma 1.0:0.9:0.8
 bindsym $mod+w exec --no-startup-id brave -app=https://web.whatsapp.com
 
 bindsym $mod+End exec "i3-msg exit"
+bindsym $mod+ctrl+r exec "i3-msg restart"
 
-for_window [class=".*"] border pixel 3
+#for_window [class=".*"] border pixel 1
+
