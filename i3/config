@@ -119,7 +119,7 @@ bindsym $mod+a focus parent
 set $ws1 "🚫"
 set $ws2 ""
 set $ws3 ""
-set $ws4 ""
+set $ws4 ""
 set $ws5 ""
 set $ws6 ""
 set $ws7 ""
@@ -191,7 +191,7 @@ gaps inner 13
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Sky.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/W.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
@@ -256,7 +256,7 @@ bindsym $mod+z exec --no-startup-id brave -app=https://chess.com/play
 
 bindsym $mod+p exec scrot
 
-bindsym $mod+m exec --no-startup-id brave -app=file:///home/shahmeer/Documents/Codes/Songs/Songs.html
+bindsym $mod+m exec blueman-manager
 
 bindsym $mod+ctrl+b exec --no-startup-id firefox
 
