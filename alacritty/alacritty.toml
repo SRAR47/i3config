@@ -28,3 +28,6 @@ bold_italic.family = "Ubuntu Mono"
 [colors.primary]
 background = "#000000"
 foreground = "#9999ff"
+
+[cursor]
+style = "beam"
