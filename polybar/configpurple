@@ -27,6 +27,8 @@ modules-left = day date time
 modules-center = xworkspaces 
 modules-right = brightness pulseaudio battery
 enable-ipc = true
+font-1 = Font Awesome 6 Free:style=Solid:size=10
+font-2 = Font Awesome 6 Brands:style=Regular:size=10
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -49,11 +51,11 @@ enable-scroll = false
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume-prefix = "Volume "
+format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
 label-volume = %percentage%%
-label-muted = muted
+label-muted = 
 label-muted-foreground = ${colors.disabled}
 
 [module/date]
@@ -88,9 +90,9 @@ poll-interval = 5
 low-at = 5
 full-at = 99
 
-format-charging = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-charging>%{F-}+
-format-discharging = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-discharging>%{F-}-
-format-full = %{F#9900ff}Battery%{F-} %{F#ffffff}<label-full>%{F-}
+format-charging = %{F#9900ff}%{F-} %{F#ffffff}<label-charging>%{F-}
+format-discharging = %{F#9900ff}%{F-} %{F#ffffff}<label-discharging>%{F-}
+format-full = %{F#9900ff}%{F-} %{F#ffffff}<label-full>%{F-}
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
@@ -98,7 +100,7 @@ label-full = %percentage%%
 
 [module/brightness]
 type = custom/script
-exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#9900ff}Brightness%{F-} " $2}'  
+exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#9900ff}%{F-} " $2}'  
 interval = 1
 label = %output%
 
