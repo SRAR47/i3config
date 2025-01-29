@@ -18,7 +18,7 @@ border-size = 2pt
 border-color = #00000000
 padding-left = 3
 padding-right = 3
-module-margin = 1
+module-margin = 2
 separator =
 separator-foreground = ${colors.secondary}
 font-0 = Ubuntu:style=Bold:pixelsize=12.5
@@ -60,7 +60,7 @@ label-muted-foreground = ${colors.disabled}
 [module/date]
 type = internal/date
 interval = 1
-date = %d-%h-%Y
+date = %d, %b
 date-alt = 
 label = %date%
 label-foreground = ${colors.primary}
@@ -68,7 +68,7 @@ label-foreground = ${colors.primary}
 [module/day]
 type = internal/date
 interval = 1
-date = %A
+date = %a
 date-alt =
 label = %date%
 label-foreground = ${colors.primary}
@@ -76,7 +76,7 @@ label-foreground = ${colors.primary}
 [module/time]
 type = internal/date
 interval = 1
-date = %I:%M %p
+date = %H:%M
 date-alt = %H:%M
 label = %date%
 label-foreground = ${colors.primary}
