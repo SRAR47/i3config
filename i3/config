@@ -126,6 +126,7 @@ set $ws7 ""
 set $ws8 ""
 set $ws9 ""
 set $ws10 ""
+set $ws11 ""
 
 # alternative for workspace switching
 bindsym Mod1+Return workspace $ws5
@@ -139,6 +140,7 @@ bindsym Mod1+o workspace $ws10
 bindsym Mod1+m workspace $ws10
 bindsym Mod1+e workspace $ws1
 bindsym Mod1+w workspace $ws9
+bindsym Mod1+z workspace $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+v move container to workspace $ws8
@@ -152,6 +154,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+o move container to workspace $ws10
 bindsym $mod+Shift+e move container to workspace $ws1
 bindsym $mod+Shift+t move container to workspace $ws7
+bindsym $mod+Shift+z move container to workspace $ws11
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -191,18 +194,15 @@ gaps inner 13
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/W.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/valley.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
 # Increase volume with F12
-bindsym F12 exec --no-startup-id amixer set Master 5%+
 
-# Decrease volume with F11
-bindsym F11 exec --no-startup-id amixer set Master 5%-
-
+bindsym F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print ($5+5 > 100 ? 100 : $5+5)"%"}')
+bindsym F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $mod+F11 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-
 
 exec --no-startup-id nm-applet
 
@@ -217,7 +217,7 @@ bindsym F10 exec --no-startup-id brightnessctl set +10%
 bindsym F9 exec --no-startup-id brightnessctl set 10%-
 
 # Lock the screen
-bindsym $mod+l exec i3lock -i ~/Pictures/Sky_converted.png
+bindsym $mod+l exec i3lock -c 000000
 
 bindsym $mod+b exec brave
 
@@ -269,3 +269,34 @@ bindsym $mod+ctrl+r exec "i3-msg restart"
 
 #for_window [class=".*"] border pixel 1
 
+assign [class="Alacritty"] → $ws5
+for_window [class="Alacritty"] focus
+
+assign [class="code"] → $ws8
+for_window [class="code"] focus
+
+assign [class="Brave-browser" instance="www.youtube.com"] → $ws4
+for_window [class="Brave-browser" instance="www.youtube.com"] focus
+
+assign [class="Brave-browser" instance="chat.openai.com"] → $ws3
+for_window [class="Brave-browser" instance="chat.openai.com"] focus
+
+assign [class="Brave-browser" instance="chess.com__play"] → $ws11
+for_window [class="Brave-browser" instance="chess.com__play"] focus
+
+assign [class="Nemo"] → $ws6
+for_window [class="Nemo"] focus
+
+assign [class="Brave-browser" instance="monkeytype.com"] → $ws7
+for_window [class="Brave-browser" instance="monkeytype.com"] focus
+
+assign [class="Brave-browser" instance="web.whatsapp.com"] → $ws9
+for_window [class="Brave-browser" instance="web.whatsapp.com"] focus
+
+assign [class="Brave-browser"] → $ws2
+for_window [class="Brave-browser"] focus
+
+assign [class="Blueman-manager"] → $ws10
+for_window [class="Blueman-manager"] focus
+
+exec_always --no-startup-id i3-msg "workspace $ws5"
