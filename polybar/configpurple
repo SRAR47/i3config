@@ -25,7 +25,7 @@ separator-foreground = ${colors.secondary}
 font-0 = Ubuntu:Bold:size=12;2
 modules-left = day date time
 modules-center = xworkspaces 
-modules-right = brightness pulseaudio battery
+modules-right = tray wifi-rofi brightness pulseaudio battery
 enable-ipc = true
 font-1 = Font Awesome 6 Free:style=Solid:size=10
 font-2 = Font Awesome 6 Brands:style=Regular:size=10
@@ -104,6 +104,14 @@ exec = brightnessctl | awk -F'[()]' '/Current brightness/ {print "%{F#9900ff}
 interval = 1
 label = %output%
 
+[module/wifi-rofi]
+type = custom/script
+exec = ~/.config/polybar/scripts/wifi-rofi.sh --status
+click-left = ~/.config/polybar/scripts/wifi-rofi.sh
+interval = 10
+label = %output%
+label-foreground = #0d72fc
+label-font = 1
 
 [settings]
 screenchange-reload = true
