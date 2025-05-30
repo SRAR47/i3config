@@ -7,7 +7,7 @@ if [[ "$1" == "--status" ]]; then
     if [[ -n "$current_ssid" ]]; then
         echo " "  # Wi-Fi icon + SSID
     else
-        echo "No Wifi"       # Wi-Fi with X icon (Font Awesome)
+        echo "󱛅"       # Wi-Fi with X icon (Font Awesome)
     fi
     exit 0
 fi
