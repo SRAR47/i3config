@@ -9,4 +9,4 @@ fastfetch
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias i3='startx'
-PS1='[ \w ]~  '
+PS1='\n      \[\e[38;5;39m\][ \w ]~ \[\e[0m '
