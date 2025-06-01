@@ -109,7 +109,7 @@ exec = ~/.config/polybar/scripts/wifi-rofi.sh --status
 click-left = ~/.config/polybar/scripts/wifi-rofi.sh
 interval = 10
 label = %output%
-label-foreground = #0d72fc
+label-foreground = #a3b8c8
 label-font = 1
 
 [settings]
