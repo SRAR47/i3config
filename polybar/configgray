@@ -16,16 +16,16 @@ foreground = ${colors.foreground}
 line-size = 2pt
 border-size = 2pt
 border-color = #00000000
-padding-left = 5
+padding-left = 0
 padding-right = 5
 module-margin = 3
-separator = |
+separator = 
 separator-foreground = ${colors.secondary}
 font-0 = Ubuntu:style=Bold:pixelsize=12.5
 #modules-left = day date time
-modules-left = waqt
-modules-center = xworkspaces
-modules-right = tray wifi-rofi brightness pulseaudio battery
+modules-left = xworkspaces
+modules-center = waqt
+modules-right = tray wifi-rofi brightness pulseaudio battery powermenu
 enable-ipc = true
 font-1 = Font Awesome 6 Free:style=Solid:size=10
 font-2 = Font Awesome 6 Brands:style=Regular:size=10
@@ -61,8 +61,9 @@ label-muted-foreground = ${colors.disabled}
 [module/waqt]
 type = internal/date
 interval = 1
-date = %a %d %b, %R
-date-alt = 
+date =   %H:%M
+date-alt =   %d, %B %Y   %A
+#date-alt = %a %d %b, %R
 label = %date%
 label-foreground = ${colors.primary}
 
@@ -120,6 +121,37 @@ interval = 10
 label = %output%
 label-foreground = #a3b8c8
 label-font = 1
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.primary}
+label-close =  cancel
+label-close-foreground = ${colors.primary}
+label-separator = |
+label-separator-foreground = ${colors.secondary}
+
+menu-0-0 = logout
+menu-0-0-exec = i3-msg exit
+menu-0-1 = reboot
+menu-0-1-exec = menu-open-1
+menu-0-2 = power off
+menu-0-2-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
