@@ -1,14 +1,16 @@
 #!/bin/bash
 
 # Options for the menu
-OPTIONS="\tShutdown\n\tReboot\n\tSuspend\n\tLogout"
+#!/bin/bash
 
-# Use rofi to select an option
-CHOICE=$(echo -e $OPTIONS | rofi -dmenu -i -p "Power Menu")
+# Define menu options (no lock)
+OPTIONS="  Shutdown\n  Reboot\n  Suspend\n  Logout"
 
-# Execute the selected option
+# Show rofi menu
+CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -p "Power Menu")
+
+# Perform action based on choice
 case "$CHOICE" in
-    
     "  Shutdown")
         systemctl poweroff
         ;;
@@ -19,8 +21,11 @@ case "$CHOICE" in
         systemctl suspend
         ;;
     "  Logout")
-        # Assuming i3, replace if using a different WM
         i3-msg exit
         ;;
+    *)
+        exit 1
+        ;;
 esac
+
 
