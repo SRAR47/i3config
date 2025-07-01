@@ -3,8 +3,6 @@
     "logo": {
         "type": "auto",
 	"source": "arch",
-        "height": 15,
-        "width": 30,
         "padding": {
             "top": 2,
             "left": 3
@@ -18,27 +16,22 @@
         },
         {
             "type": "host",
-            "key": "│ ├ ",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "cpu",
-            "key": "│ ├",
-            "keyColor": "\u001b[38;2;23;147;209m"
-        },
-        {
-            "type": "gpu",
-            "key": "│ ├󰍛",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "memory",
-            "key": "│ ├󰍛",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "disk",
-            "key": "│ ├",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
@@ -50,51 +43,45 @@
             "type": "custom",
             "format": "\u001b[38;2;23;147;209m┌──────────────────────Software──────────────────────┐"
         },
+	{
+	    "type": "os",
+            "key": "│ ├  ",
+	    "keyColor": "\u001b[38;2;23;147;209m",
+            "format": "{name} {version}"
+    	},
         {
             "type": "wm",
-            "key": "│ ├",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "terminal",
-            "key": "│ ├",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "custom",
             "format": "\u001b[38;2;23;147;209m└────────────────────────────────────────────────────┘"
         },
-        "break",
-        {
+	"break",
+	 {
             "type": "custom",
-            "format": "\u001b[38;2;23;147;209m┌────────────────────Uptime / Age / DT────────────────────┐"
+            "format": "\u001b[38;2;23;147;209m┌──────────────────────Owner──────────────────────┐"
         },
-        {
+	{
             "type": "command",
-            "key": "│ ├OS Age ",
+            "key": "│ ├  ",
             "keyColor": "\u001b[38;2;23;147;209m",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+	    "text": "whoami"
         },
-        {
-            "type": "uptime",
-            "key": "│ ├Uptime ",
-            "keyColor": "\u001b[38;2;23;147;209m"
-        },
-        {
-            "type": "datetime",
-            "key": "│ ├DateTime ",
-            "keyColor": "\u001b[38;2;23;147;209m"
-        },
-        {
+	{
             "type": "custom",
-            "format": "\u001b[38;2;23;147;209m└─────────────────────────────────────────────────────────┘"
+            "format": "\u001b[38;2;23;147;209m└─────────────────────────────────────────────────┘"
         },
 	"break",
 	"break",
 	"break",
-//        {
-//            "type": "colors"
-//        },
+	"break"
 
     ]
 }
