@@ -10,75 +10,58 @@
     },
     "modules": [
         "break",
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m┌──────────────────────Hardware──────────────────────┐"
-        },
+	 "break",
         {
             "type": "host",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "cpu",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "memory",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "disk",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m└────────────────────────────────────────────────────┘"
-        },
         "break",
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m┌──────────────────────Software──────────────────────┐"
-        },
+	 "break",
+	"break",
+	"break",
 	{
 	    "type": "os",
-            "key": "│ ├  ",
+            "key": "  ",
 	    "keyColor": "\u001b[38;2;23;147;209m",
             "format": "{name} {version}"
     	},
         {
             "type": "wm",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
         {
             "type": "terminal",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m"
         },
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m└────────────────────────────────────────────────────┘"
-        },
+        	"break",
+		 "break",
 	"break",
-	 {
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m┌──────────────────────Owner──────────────────────┐"
-        },
+	"break",
 	{
             "type": "command",
-            "key": "│ ├  ",
+            "key": "  ",
             "keyColor": "\u001b[38;2;23;147;209m",
 	    "text": "whoami"
         },
-	{
-            "type": "custom",
-            "format": "\u001b[38;2;23;147;209m└─────────────────────────────────────────────────┘"
-        },
-	"break",
+		"break",
 	"break",
 	"break",
 	"break"
