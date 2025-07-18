@@ -23,6 +23,9 @@ font pango:Ubuntu 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id export GTK_THEME=Adwaita-dark
+
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -127,6 +130,7 @@ set $ws8 ""
 set $ws9 ""
 set $ws10 ""
 set $ws11 ""
+set $ws12 ""
 
 # alternative for workspace switching
 bindsym Mod1+Return workspace $ws5
@@ -141,6 +145,7 @@ bindsym Mod1+m workspace $ws10
 bindsym Mod1+e workspace $ws1
 bindsym Mod1+w workspace $ws9
 bindsym Mod1+z workspace $ws11
+bindsym Mod1+i workspace $ws12
 
 # move focused container to workspace
 bindsym $mod+Shift+v move container to workspace $ws8
@@ -155,6 +160,7 @@ bindsym $mod+Shift+o move container to workspace $ws10
 bindsym $mod+Shift+e move container to workspace $ws1
 bindsym $mod+Shift+t move container to workspace $ws7
 bindsym $mod+Shift+z move container to workspace $ws11
+bindsym $mod+Shift+i move container to workspace $ws12
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -221,7 +227,7 @@ bindsym $mod+l exec i3lock -c 000000
 
 bindsym $mod+b exec brave
 
-bindsym $mod+n exec nemo
+bindsym $mod+n exec thunar
 
 #bindsym $mod+z exec blueman-manager
 
@@ -245,6 +251,8 @@ bindsym $mod+c exec --no-startup-id brave --app=https://chat.openai.com
 
 bindsym $mod+t exec --no-startup-id brave --app=https://monkeytype.com
 
+bindsym $mod+i exec --no-startup-id brave --app=https://instagram.com/reels
+
 #exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf
 
@@ -266,6 +274,8 @@ bindsym $mod+w exec --no-startup-id brave -app=https://web.whatsapp.com
 
 bindsym $mod+End exec "i3-msg exit"
 bindsym $mod+ctrl+r exec "i3-msg restart"
+bindsym $mod+ctrl+p exec --no-startup-id ~/.config/polybar/scripts/powermenu.sh
+bindsym $mod+ctrl+w exec --no-startup-id ~/.config/polybar/scripts/wifi-rofi.sh
 
 #for_window [class=".*"] border pixel 1
 
@@ -284,11 +294,14 @@ for_window [class="Brave-browser" instance="chat.openai.com"] focus
 assign [class="Brave-browser" instance="github.com__copilot"] → $ws3
 for_window [class="Brave-browser" instance="github.com__copilot"] focus
 
+assign [class="Brave-browser" instance="instagram.com__reels"] → $ws12
+for_window [class="Brave-browser" instance="instagram.com__reels"] focus
+
 assign [class="Brave-browser" instance="chess.com__play"] → $ws11
 for_window [class="Brave-browser" instance="chess.com__play"] focus
 
-assign [class="Nemo"] → $ws6
-for_window [class="Nemo"] focus
+assign [class="Thunar"] → $ws6
+for_window [class="Thunar"] focus
 
 assign [class="Brave-browser" instance="monkeytype.com"] → $ws7
 for_window [class="Brave-browser" instance="monkeytype.com"] focus
