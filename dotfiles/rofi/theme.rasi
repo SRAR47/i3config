@@ -1,46 +1,175 @@
- // Global theme settings for overall dark appearance
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
 
-* {
-    background-color: #000000;          // Dark background color for all elements
-    color: #ccffff;          // Light text color
-//    border: 1px;                  // Border thickness
-    border-color: #31324400;        // Darker border color
-    border-radius: 25px;           // Rounded corners
-    padding: 2px;                 // Padding around elements
-    spacing: 2px;                 // Spacing between items
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+	drun-display-format:        "{name}";
 }
 
-// Set dark background specifically for the main Rofi window
+/*****----- Global Properties -----*****/
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
+
+/*****----- Main Window -----*****/
 window {
-    background: #1e1e2e;          // Dark background for the window
-    width: 20%;                   // Reduced width
-    anchor: center;               // Center on screen
-    location: center;             // Center vertically as well
-//    border: 1px;                  // Optional border to define the window
-    border-color: #313244;        // Border color matching the theme
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       1000px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
 }
 
-// List view settings to control item display and aesthetics
-listview {
-    background: inherit;          // Inherits the global background color
-    lines: 5;                     // Number of items visible (controls height)
-    padding: 2px 5px;             // Inner padding for each item
-    scrollbar: false;             // Disable scrollbar
-}
-
-// Set dark background specifically for the input bar
-inputbar {
-    background: #1e1e2e;          // Dark background for the input bar
-    spacing: 5px;                 // Spacing between input and other elements
-}
-
-// Set dark background specifically for the main box area
+/*****----- Main Box -----*****/
 mainbox {
-    background: #1e1e2e;          // Dark background for the main box
-//    border: 2px;                  // Border around the main content
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     40px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
 }
 
-element selected {
-	border: 1px;
-	border-color: #ffffff50;
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px 500px 0px 0px;
+    padding:                     12px;
+    border:                      0px 0px 0px 4px;
+    border-radius:               0px 100% 100% 0px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     7;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @background-alt;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     15px 10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    border:                      0px 0px 0px 4px;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        64px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     40px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            black / 10%;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            transparent;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
 }
