@@ -18,7 +18,6 @@ configuration {
 
 /*****----- Global Properties -----*****/
 @import                          "~/.config/rofi/colors.rasi"
-@import                          "~/.config/rofi/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
