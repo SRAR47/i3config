@@ -1,3 +1,4 @@
+
 /**
  *
  * Author : Aditya Shakya (adi1090x)
@@ -16,8 +17,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/colors.rasi"
+@import                          "~/.config/rofi/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -34,8 +35,8 @@ window {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                #000000;
-    background-color:            #444444ff;
+    border-color:                @selected;
+    background-color:            @background;
     cursor:                      "default";
 }
 
@@ -48,7 +49,7 @@ mainbox {
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
-    background-color:            #444444ff;
+    background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
 
@@ -61,16 +62,16 @@ inputbar {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            #333333;
-    text-color:                  #ffffff;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
 }
 
 prompt {
     enabled:                     true;
     padding:                     12px;
-    background-color:            #555555;
-    text-color:                  #ffffff;
+    background-color:            @selected;
+    text-color:                  @background;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -108,8 +109,8 @@ listview {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            #444444;
-    text-color:                  #ffffff;
+    background-color:            transparent;
+    text-color:                  @foreground;
     cursor:                      "default";
 }
 scrollbar {
@@ -128,8 +129,8 @@ element {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            #333333;
-    text-color:                  #ffffff;
+    background-color:            @background;
+    text-color:                  @foreground;
     cursor:                      pointer;
 }
 element normal.normal {
@@ -178,3 +179,4 @@ textbox {
     horizontal-align:            0.0;
     highlight:                   none;
 }
+
