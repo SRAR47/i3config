@@ -200,7 +200,7 @@ gaps inner 13
 
 bindsym $mod+space exec rofi -show drun
 
-exec_always --no-startup-id feh --bg-scale ~/i3config/Wallpapers/Forest.jpg
+exec_always --no-startup-id feh --bg-scale ~/i3config/Wallpapers/mountains.jpg
 
 exec_always --no-startup-id killall -q polybar; polybar mybar &
 
