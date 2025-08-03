@@ -1,10 +1,12 @@
- configuration {
-
-    modi: "drun,run,window,ssh"; // Set available modes
-    font: "Ubuntu Mono 10"; // Set your preferred font
-    terminal: "gnome-terminal"; // Set your terminal application
-    show-icons: true; // Enable icons
+configuration {
+    modi: "drun,run,window,ssh";
+    terminal: "gnome-terminal";
+    show-icons: true;
+}
+* {
+  font: "Font Awesome 6 Free Solid 12, Font Awesome 6 Brands Regular 12, Font Awesome 6 Free Regular 12, Ubuntu 12";
 }
 
-// Link to the theme file
+
 @theme "~/.config/rofi/theme.rasi"
+
