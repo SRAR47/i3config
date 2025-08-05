@@ -119,7 +119,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "🚫"
+set $ws1 ""
 set $ws2 ""
 set $ws3 ""
 set $ws4 ""
@@ -141,8 +141,7 @@ bindsym Mod1+y workspace $ws4
 bindsym Mod1+t workspace $ws7
 bindsym Mod1+n workspace $ws6
 bindsym Mod1+o workspace $ws10
-bindsym Mod1+m workspace $ws10
-bindsym Mod1+e workspace $ws1
+bindsym Mod1+m workspace $ws1
 bindsym Mod1+w workspace $ws9
 bindsym Mod1+z workspace $ws11
 bindsym Mod1+i workspace $ws12
@@ -157,7 +156,7 @@ bindsym $mod+Shift+n move container to workspace $ws6
 bindsym $mod+Shift+w move container to workspace number $ws9
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+o move container to workspace $ws10
-bindsym $mod+Shift+e move container to workspace $ws1
+bindsym $mod+Shift+m move container to workspace $ws1
 bindsym $mod+Shift+t move container to workspace $ws7
 bindsym $mod+Shift+z move container to workspace $ws11
 bindsym $mod+Shift+i move container to workspace $ws12
@@ -264,7 +263,7 @@ bindsym $mod+z exec --no-startup-id brave -app=https://chess.com/play
 
 bindsym $mod+p exec scrot
 
-bindsym $mod+m exec blueman-manager
+bindsym $mod+m exec mpv
 
 bindsym $mod+ctrl+b exec --no-startup-id brave
 
@@ -281,6 +280,9 @@ bindsym $mod+ctrl+w exec --no-startup-id ~/.config/polybar/scripts/wifi-rofi.sh
 
 assign [class="Alacritty"] → $ws5
 for_window [class="Alacritty"] focus
+
+assign [class="mpv"] → $ws1
+for_window [class="mpv"] focus
 
 assign [class="code"] → $ws8
 for_window [class="code"] focus
